@@ -8,6 +8,6 @@ RUN apt-get update -yq \
 && wget -q https://download3.repetier.com/files/server/debian-amd64/Repetier-Server-1.0.3-Linux.deb \
 && dpkg -i Repetier-Server-1.0.3-Linux.deb \
 && rm /etc/init.d/RepetierServer
-COPY RepetierServer /etc/init.d/
+COPY RepetierServer /etc/init.d/RepetierServer
 EXPOSE 3344
 ENTRYPOINT [ "bash", "-c", "service RepetierServer start && tail -f /dev/null" ]
